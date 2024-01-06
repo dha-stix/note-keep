@@ -19,7 +19,7 @@ export default function Dashboard({ userID }: { userID: string }) {
     useEffect(() => {
         async function fetchNotes() {
             try {
-                const { data, error } = await supabase.from("notes").select("*").limit(10).eq("user", userID)
+                const { data, error } = await supabase.from("notes").select().eq("user", userID)
                 if (error) throw error
                 setNotes(data)
             } catch (error) {
