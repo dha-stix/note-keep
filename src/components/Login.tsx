@@ -24,7 +24,7 @@ export default function Login() {
 			setPassword("");
 			navigate("/dashboard");
 		} catch (error) {
-			alert(`Encountered an errror - ${error.message}`);
+			alert(`Authentication Error - Invalid Credentials`)
 		}
 	};
 

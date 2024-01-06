@@ -15,7 +15,7 @@ export default function Register() {
 
 	const handleSignUp = async () => {
 		try {
-			const { data, error } = await supabase.auth.signUp({
+			const { error } = await supabase.auth.signUp({
 				email,
 				password,
 				options: {
@@ -30,7 +30,7 @@ export default function Register() {
 			setFullName("")
 			navigate("/login")
 		} catch (error) {
-			alert(`Encountered an errror - ${error.message}`)
+			alert(`Authentication Error - Invalid Credentials`)
 		}
 	};
 

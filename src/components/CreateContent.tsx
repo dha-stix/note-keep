@@ -18,7 +18,7 @@ export default function Content({ userID }: { userID: string }) {
 
 	const saveNote = async () => {
 		try {
-			const { data, error } = await supabase
+			const { error } = await supabase
 				.from("notes")
 				.insert({ title, content, slug: titleToSlug(title), user: userID })
 				.single();
